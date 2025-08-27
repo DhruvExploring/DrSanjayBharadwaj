@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dr. Sanjay Bhardwaj</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2c5530;
+            --primary-light: #4a7c59;
+            --secondary: #1e3a8a;
+            --accent: #b45309;
+            --dark: #1f2937;
+            --dark-gray: #374151;
+            --medium-gray: #6b7280;
+            --light-gray: #d1d5db;
+            --bg-light: #f9fafb;
+            --bg-cream: #fefdfb;
+            --white: #ffffff;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--bg-cream);
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(249, 250, 251, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--light-gray);
+            transition: all 0.3s ease;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--dark-gray);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: var(--bg-cream);
+            padding: 8rem 2rem 4rem;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-family: 'Crimson Text', serif;
+            font-size: 3.5rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--medium-gray);
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: var(--shadow-xl);
+            margin-left: auto;
+            display: block;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.875rem 2rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            border: 2px solid var(--primary);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-light);
+            border-color: var(--primary-light);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Section Base */
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section h2 {
+            font-family: 'Crimson Text', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--dark);
+        }
+
+        /* About Section */
+        .about {
+            background: var(--white);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--dark-gray);
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight-box {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .highlight-box h3 {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: block;
+            font-family: 'Crimson Text', serif;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+            margin-top: 0.5rem;
+        }
+
+        /* Quotes Section */
+        .quotes {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 5rem 2rem;
+        }
+
+        .quotes h2 {
+            color: white;
+            margin-bottom: 4rem;
+        }
+
+        .quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .quote-box {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .quote-box:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .quote-text {
+            font-size: 1.2rem;
+            font-style: italic;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .quote-text::before {
+            content: '"';
+            font-size: 4rem;
+            opacity: 0.3;
+            position: absolute;
+            top: -1rem;
+            left: -1rem;
+            font-family: 'Crimson Text', serif;
+        }
+
+        .quote-author {
+            font-weight: 600;
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .quote-context {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            margin-top: 0.5rem;
+        }
+        
+        /* New quote style */
+        .embedded-quote {
+            text-align: center;
+            font-size: 1.5rem;
+            font-style: italic;
+            color: var(--secondary);
+            max-width: 800px;
+            margin: 3rem auto;
+            border-left: 5px solid var(--accent);
+            padding: 1rem 2rem;
+            background: var(--bg-light);
+            border-radius: 0 12px 12px 0;
+            line-height: 1.5;
+        }
+
+        /* Offerings Section with Gear Mechanism */
+        .offerings {
+            background: var(--bg-light);
+        }
+
+        .offerings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--primary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            color: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Gear Mechanism */
+        .gear-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+        }
+
+        .gear {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--primary), var(--primary-light));
+            transition: transform 0.5s ease;
+            opacity: 0.1;
+        }
+        
+        .quotes .gear {
+            background: linear-gradient(45deg, white, #e0e0e0);
+            opacity: 0.1;
+        }
+
+        .gear::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70%;
+            height: 70%;
+            border-radius: 50%;
+            background: radial-gradient(circle, transparent 30%, currentColor 30%, currentColor 40%, transparent 40%),
+                conic-gradient(from 0deg, transparent 0deg, currentColor 30deg, transparent 60deg, currentColor 90deg, transparent 120deg, currentColor 150deg, transparent 180deg, currentColor 210deg, transparent 240deg, currentColor 270deg, transparent 300deg, currentColor 330deg, transparent 360deg);
+            color: black;
+        }
+        
+        .quotes .gear::before {
+            color: white;
+        }
+
+        .gear-main {
+            width: 40px;
+            height: 40px;
+            top: 5px;
+            left: 5px;
+        }
+
+        .gear-small {
+            width: 25px;
+            height: 25px;
+            top: 0;
+            right: 0;
+        }
+
+        .card:hover .gear-main {
+            transform: rotate(180deg);
+            opacity: 0.3;
+        }
+
+        .card:hover .gear-small {
+            transform: rotate(-240deg);
+            opacity: 0.2;
+        }
+
+        .card.has-gears {
+            position: relative;
+        }
+        
+        .blog-card.has-gears:hover .gear-main {
+            transform: rotate(120deg);
+            opacity: 0.15;
+        }
+
+        .blog-card.has-gears:hover .gear-small {
+            transform: rotate(-180deg);
+            opacity: 0.1;
+        }
+        
+        .media-card.has-gears:hover .gear-main {
+            transform: rotate(90deg);
+            opacity: 0.2;
+        }
+
+        .media-card.has-gears:hover .gear-small {
+            transform: rotate(-135deg);
+            opacity: 0.15;
+        }
+
+        .card h3 {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .card p {
+            color: var(--medium-gray);
+            line-height: 1.6;
+        }
+
+        /* Blog Section */
+        .blog {
+            background: var(--white);
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .blog-card {
+            background: var(--bg-light);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--accent);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .blog-title {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .blog-excerpt {
+            color: var(--medium-gray);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .blog-meta {
+            color: var(--accent);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Media Section */
+        .media {
+            background: var(--bg-light);
+        }
+
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .media-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .media-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .media-header {
+            height: 180px;
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            position: relative;
+        }
+
+        .media-content {
+            padding: 1.5rem;
+        }
+
+        .media-content h4 {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.2rem;
+            color: var(--dark);
+            margin-bottom: 0.75rem;
+        }
+
+        .media-content p {
+            color: var(--medium-gray);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Testimonial Card */
+        .testimonial {
+            background: var(--bg-cream);
+            border: 2px solid var(--light-gray);
+        }
+
+        .testimonial .media-header {
+            background: var(--secondary);
+        }
+
+        .testimonial blockquote {
+            font-style: italic;
+            color: var(--dark-gray);
+            margin-bottom: 1rem;
+        }
+
+        .testimonial cite {
+            font-weight: 600;
+            color: var(--primary);
+            font-style: normal;
+        }
+
+        /* CTA Section */
+        .cta {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .cta h3 {
+            font-family: 'Crimson Text', serif;
+            font-size: 2.2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta p {
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta .btn-primary {
+            background: white;
+            color: var(--primary);
+            border-color: white;
+        }
+
+        .cta .btn-primary:hover {
+            background: var(--bg-light);
+            border-color: var(--bg-light);
+        }
+
+        .cta .btn-secondary {
+            border-color: white;
+            color: white;
+        }
+
+        .cta .btn-secondary:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--light-gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-text {
+            color: var(--light-gray);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            nav {
+                gap: 1rem;
+            }
+
+            nav a {
+                font-size: 0.9rem;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .quotes-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 3rem 1rem;
+            }
+
+            .header-container {
+                padding: 1rem;
+            }
+
+            .quotes {
+                padding: 3rem 1rem;
+            }
+
+            .quote-box {
+                padding: 2rem;
+            }
+        }
+
+        /* Scroll Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="#home" class="logo">Dr. Sanjay Bhardwaj</a>
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#about">About Me</a>
+                <a href="#offerings">What I Offer</a>
+                <a href="#blog">Blog</a>
+                <a href="#media">Media</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Dr. Sanjay Bhardwaj</h1>
+                <p class="hero-subtitle">Physics Educator | Experiential Learning Specialist <br>| Satirical Writer | Nature Enthusiast | Academic Researcher
+</p>
+                <p class="hero-description">With over 30 years of experience in both teaching and administrative roles, I focus on interactive, curiosity-driven physics instruction that connects real-life experiences. Bringing wonder into learning through experiential approaches, satirical reflection, and nature-based discovery.</p>
+                <div class="hero-buttons">
+                    <a href="#about" class="btn btn-primary">Learn About My Journey</a>
+                    <a href="#contact" class="btn btn-secondary">Let's Connect</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="Profile.jpeg" alt="Dr. Sanjay Bhardwaj">
+            </div>
+        </div>
+    </section>
+
+    <section class="section about fade-in" id="about">
+        <h2>Who I Am</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Over three decades in classrooms and corridors, I've worn many hats — Teacher, Vice Principal, Workshop Leader, and Curriculum Innovator. My journey began with roots in Roorkee's rich academic tradition and has evolved into a unique approach that bridges rigorous physics education with joyful, experiential learning.</p>
+                <p>I believe that physics isn't just about formulas and theories—it's about understanding the wonder that surrounds us every day. From the sound waves echoing through a forest to the optical phenomena during monsoons, I help educators and students discover the physics that happens to them naturally.</p>
+                <p>My work spans traditional classroom teaching, innovative curriculum development, teacher training programs, and educational satire that challenges conventional approaches. When I'm not teaching physics, I'm composing thoughts in music, humor, and ideas that spark genuine curiosity and reflective learning.</p>
+            </div>
+            <div class="highlight-box">
+                <h3>My Impact</h3>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-number">30+</span>
+                        <div class="stat-label">Years in Education</div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">1000+</span>
+                        <div class="stat-label">Educators Trained</div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <div class="stat-label">Workshops Conducted</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="embedded-quote fade-in">"Average students in his class, are as common as unicorns in a physics lab. His students fall into two categories: the above-average, who find the material yawn inducing and the below-average, who look at it like it's written in ancient hieroglyphics. Arjun—err, Mr. Bhardwaj—finds himself shooting arrows into an empty space"</p>
+    </section>
+
+    <section class="section offerings fade-in" id="offerings">
+        <h2>What I Offer</h2>
+        <div class="offerings-grid">
+            <div class="card has-gears">
+                <div class="gear-container">
+                    <div class="gear gear-main"></div>
+                    <div class="gear gear-small"></div>
+                </div>
+                <!-- <div class="card-icon"></div> -->
+                <h3>Experiential Learning Workshops</h3>
+                <p>Hands-on physics workshops that transform abstract concepts into tangible experiences. I design sessions that connect classroom learning with real-world phenomena, making physics accessible and exciting for learners of all ages.</p>
+            </div>
+            
+            <div class="card has-gears">
+                <div class="gear-container">
+                    <div class="gear gear-main"></div>
+                    <div class="gear gear-small"></div>
+                </div>
+                <!-- <div class="card-icon"></div> -->
+                <h3>Educator Training & Mentoring</h3>
+                <p>Comprehensive professional development programs for physics teachers and educators. I share practical strategies, innovative teaching methods, and reflective practices that transform how physics is taught and learned.</p>
+            </div>
+            
+            <div class="card has-gears">
+                <div class="gear-container">
+                    <div class="gear gear-main"></div>
+                    <div class="gear gear-small"></div>
+                </div>
+                <!-- <div class="card-icon"></div> -->
+                <h3>Nature-based Physics Modules</h3>
+                <p>Unique curriculum modules that explore physics concepts through natural phenomena. From forest acoustics to monsoon optics, these programs foster both scientific understanding and environmental awareness.</p>
+            </div>
+            
+            <div class="card has-gears">
+                <div class="gear-container">
+                    <div class="gear gear-main"></div>
+                    <div class="gear gear-small"></div>
+                </div>
+                <!-- <div class="card-icon"></div> -->
+                <h3>Curriculum & CPD Consulting</h3>
+                <p>Strategic consulting for educational institutions seeking to modernize their physics curriculum and continuous professional development programs. I help schools create more engaging and effective learning experiences.</p>
+            </div>
+            
+            <div class="card has-gears">
+                <div class="gear-container">
+                    <div class="gear gear-main"></div>
+                    <div class="gear gear-small"></div>
+                </div>
+                <!-- <div class="card-icon"></div> -->
+                <h3>Educational Satire Writing</h3>
+                <p>Thought-provoking satirical content that challenges conventional educational practices. My writings offer humorous yet insightful perspectives on teaching, learning, and educational bureaucracy.</p>
+            </div>
+            
+            <div class="card has-gears">
+                <div class="gear-container">
+                    <div class="gear gear-main"></div>
+                    <div class="gear gear-small"></div>
+                </div>
+                <!-- <div class="card-icon"></div> -->
+                <h3>Creative Learning Integration</h3>
+                <p>Innovative approaches that blend music, humor, and creativity with physics education. I help educators incorporate artistic elements to create more memorable and engaging learning experiences.</p>
+            </div>
+        </div>
+    </section>
+
+    <p class="embedded-quote fade-in">"The report card of students in every “good school” is an indecipherable maze of educational jargon, all under the grand label of “360-degree assessment.” After all, they are the change makers. For Mr. Jha and his generation, who probably come from a traditional one-dimensional era not even 30 degree, this was a leap into the unknown"</p>
+    
+
+    <section class="section blog fade-in" id="blog">
+        <h2>My Writings & Videos</h2>
+        <div class="blog-grid">
+            <div class="blog-card has-gears">
+                <div class="gear-container">
+                    <div class="gear gear-main"></div>
+                    <div class="gear gear-small"></div>
+                </div>
+                <h3 class="blog-title">Graphic Novel - A morning with Newton</h3>
+                <p class="blog-excerpt">What starts as an exchange about the general tendency of mankind to comfortably stay in their beds turns into a learning moment as the father introduces the concept of inertia to his daughter.</p>
+                <a href="https://diksha.gov.in/resources/play/collection/do_31322470202954547211313?contentType=TextBook" class="blog-meta">Read more</a>
+            </div>
+            
+            <div class="blog-card has-gears">
+                <div class="gear-container">
+                    <div class="gear gear-main"></div>
+                    <div class="gear gear-small"></div>
+                </div>
+                <h3 class="blog-title">Impact of Experiential Learning as a Pedagogy on Learning Outcomes</h3>
+                <p class="blog-excerpt">Based on the theories of Dewey and Kolb, this article reviews how experiential learning impacts academic performance, motivation, and self-efficacy in K-12 students and discusses its future scope.</p>
+                <a href="https://www.jetir.org/view?paper=JETIR2303080" class="blog-meta">Read more</a>
+            </div>
+            
+            <div class="blog-card has-gears">
+                <div class="gear-container">
+                    <div class="gear gear-main"></div>
+                    <div class="gear gear-small"></div>
+                </div>
+                <h3 class="blog-title">Efficacy of Multiple Intelligence based Instruction Models for School Teaching</h3>
+                <p class="blog-excerpt">This examines the empirical evidence for using Multiple Intelligence theory as a basis for teaching models in schools. It questions whether differentiating instruction to align with various intelligences leads to a measurable improvement in academic performance.</p>
+                <a href="https://shikshapriyadarshini.com/wp-content/uploads/2024/07/19.-ShikshaPriyadarshini_Pre-Pages.pdf" class="blog-meta">Read More</a>
+            </div>
+            <div class="blog-card has-gears">
+                <div class="gear-container">
+                    <div class="gear gear-main"></div>
+                    <div class="gear gear-small"></div>
+                </div>
+                <h3 class="blog-title">Navigating the New Horizons: Implications of NEP 2020 for Indian
+School Education</h3>
+                <p class="blog-excerpt">NEP 2020 revolutionizes Indian school education by shifting from rote learning to a holistic, multidisciplinary approach. It introduces a new curricular structure and prioritizes foundational skills and vocational training from an early age.</p>
+                <a href="https://shikshapriyadarshini.com/wp-content/uploads/2025/01/20.-ShikshaPriyadarshini_Pre-Pages.pdf" class="blog-meta">Read More</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section media fade-in" id="media">
+        <h2>Media & Resources</h2>
+        <div class="media-grid">
+            <div class="media-card has-gears">
+                <div class="gear-container">
+                    <div class="gear gear-main"></div>
+                    <div class="gear gear-small"></div>
+                </div>
+                <div class="media-header"></div>
+                <div class="media-content">
+                    <h4>Physics in the Wild: Sound Waves in a Forest</h4>
+                    <p>A captivating exploration of acoustic physics principles demonstrated through natural forest environments, showing how sound behaves in different natural settings.</p>
+                </div>
+            </div>
+            
+            <div class="media-card testimonial">
+                <div class="media-header"></div>
+                <div class="media-content">
+                    <blockquote>"Your session completely transformed how I approach teaching physics. The nature-based methodology has made my students more engaged than ever before. Thank you for opening our eyes to new possibilities in education."</blockquote>
+                    <cite>— Teacher, Delhi</cite>
+                </div>
+            </div>
+            
+            <div class="media-card has-gears">
+                <div class="gear-container">
+                    <div class="gear gear-main"></div>
+                    <div class="gear gear-small"></div>
+                </div>
+                <div class="media-header"></div>
+                <div class="media-content">
+                    <h4>Workshop Documentation</h4>
+                    <p>Visual documentation from recent experiential learning workshops, showcasing educators actively discovering physics concepts through collaborative hands-on activities.</p>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <p class="embedded-quote fade-in">"अब इस उम्र मे अपने आप को दोबारा सिद्ध करने की न तो इच्छा होती है न ही ज़रूरत"</p>
+
+    <section class="cta fade-in" id="contact">
+        <h3>Ready to Transform Physics Education Together?</h3>
+        <p>Whether you're an educator seeking fresh inspiration, a school leader planning innovation, or a curious learner ready to explore physics in new ways, I'd love to connect and collaborate with you.</p>
+        <div class="hero-buttons">
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=bhardwajgbs@gmail.com" class="btn btn-primary">Start Our Conversation</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            <a href="https://www.linkedin.com/in/sanjay-bhardwaj-0bb138171">LinkedIn</a>
+            <a href="https://youtube.com/@sanjaybhardwaj5529">YouTube</a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=bhardwajgbs@gmail.com">Email</a>
+        </div>
+        <p class="footer-text">&copy; 2025 Dr. Sanjay Bhardwaj | Bringing Wonder into Learning</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Header background on scroll
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > 100) {
+                header.style.background = 'rgba(249, 250, 251, 0.98)';
+                header.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.background = 'rgba(249, 250, 251, 0.95)';
+                header.style.boxShadow = 'none';
+            }
+            
+            lastScrollTop = scrollTop;
+        });
+    </script>
+</body>
+</html>
