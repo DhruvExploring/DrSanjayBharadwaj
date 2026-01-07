@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dr. Sanjay Bhardwaj</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
     <style>
         :root {
             --primary: #2c5530;
@@ -106,13 +109,14 @@
         }
 
         .menu-toggle {
-            display: none; /* Hidden by default */
+            display: none;
+            /* Hidden by default */
             background: none;
             border: none;
             cursor: pointer;
             z-index: 1001;
         }
-        
+
         .menu-toggle span {
             display: block;
             width: 25px;
@@ -364,7 +368,7 @@
             opacity: 0.7;
             margin-top: 0.5rem;
         }
-        
+
         /* New quote style */
         .embedded-quote {
             text-align: center;
@@ -387,24 +391,34 @@
 
         .offerings-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 3rem;
+        }
+
+        @media (max-width: 900px) {
+            .offerings-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         .card {
             background: white;
-            padding: 2.5rem;
-            border-radius: 12px;
+            padding: 3rem;
+            border-radius: 16px;
             box-shadow: var(--shadow);
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
             border-top: 4px solid var(--primary);
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
         }
 
         .card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            border-top-color: var(--accent);
         }
 
         .card-icon {
@@ -438,7 +452,7 @@
             transition: transform 0.5s ease;
             opacity: 0.1;
         }
-        
+
         .quotes .gear {
             background: linear-gradient(45deg, white, #e0e0e0);
             opacity: 0.1;
@@ -457,7 +471,7 @@
                 conic-gradient(from 0deg, transparent 0deg, currentColor 30deg, transparent 60deg, currentColor 90deg, transparent 120deg, currentColor 150deg, transparent 180deg, currentColor 210deg, transparent 240deg, currentColor 270deg, transparent 300deg, currentColor 330deg, transparent 360deg);
             color: black;
         }
-        
+
         .quotes .gear::before {
             color: white;
         }
@@ -489,7 +503,7 @@
         .card.has-gears {
             position: relative;
         }
-        
+
         .blog-card.has-gears:hover .gear-main {
             transform: rotate(120deg);
             opacity: 0.15;
@@ -499,7 +513,7 @@
             transform: rotate(-180deg);
             opacity: 0.1;
         }
-        
+
         .media-card.has-gears:hover .gear-main {
             transform: rotate(90deg);
             opacity: 0.2;
@@ -544,7 +558,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .blog-card:hover {
             transform: translateY(-2px);
             box-shadow: var(--shadow-lg);
@@ -746,6 +760,7 @@
             .hero-content h1 {
                 font-size: 3rem;
             }
+
             .section h2 {
                 font-size: 2.2rem;
             }
@@ -754,7 +769,8 @@
         /* Tablet Portrait */
         @media (max-width: 820px) {
             .menu-toggle {
-                display: block; /* Show hamburger menu */
+                display: block;
+                /* Show hamburger menu */
             }
 
             nav {
@@ -773,7 +789,7 @@
                 transition: transform 0.3s ease-in-out;
                 box-shadow: var(--shadow-lg);
             }
-            
+
             body.nav-open nav {
                 transform: translateX(0);
             }
@@ -781,9 +797,11 @@
             body.nav-open .menu-toggle span:nth-child(1) {
                 transform: translateY(8px) rotate(45deg);
             }
+
             body.nav-open .menu-toggle span:nth-child(2) {
                 opacity: 0;
             }
+
             body.nav-open .menu-toggle span:nth-child(3) {
                 transform: translateY(-8px) rotate(-45deg);
             }
@@ -797,7 +815,7 @@
                 gap: 3rem;
                 text-align: center;
             }
-            
+
             .hero-image img {
                 margin: 0 auto;
             }
@@ -825,7 +843,7 @@
             .header-container {
                 padding: 1rem 1.5rem;
             }
-            
+
             .section {
                 padding: 4rem 1.5rem;
             }
@@ -837,7 +855,7 @@
             .hero-content h1 {
                 font-size: 2.5rem;
             }
-            
+
             .hero-subtitle {
                 font-size: 1.15rem;
             }
@@ -856,7 +874,7 @@
                 padding: 1rem 1.5rem;
                 margin: 2rem auto;
             }
-            
+
             .cta h3 {
                 font-size: 1.8rem;
             }
@@ -873,9 +891,9 @@
                 gap: 1.5rem;
             }
         }
-
     </style>
 </head>
+
 <body>
     <header>
         <div class="header-container">
@@ -904,15 +922,19 @@
                 </div>
                 <div class="hero-content">
                     <h1>Dr. Sanjay Bhardwaj</h1>
-                    <p class="hero-subtitle">Physics Educator | Experiential Learning Specialist <br>| Satirical Writer | Nature Enthusiast | Academic Adviser | Independent Researcher
-    </p>
-                    <p class="hero-description">With over 30 years of experience in both teaching and administrative roles, I focus on interactive, curiosity-driven physics instruction that connects real-life experiences. Bringing wonder into learning through experiential approaches, satirical reflection, and nature-based discovery.</p>
+                    <p class="hero-subtitle">Physics Educator | Experiential Learning Specialist <br>| Satirical Writer
+                        | Nature Enthusiast | Academic Adviser | Independent Researcher
+                    </p>
+                    <p class="hero-description">With over 30 years of experience in both teaching and administrative
+                        roles, I focus on interactive, curiosity-driven physics instruction that connects real-life
+                        experiences. Bringing wonder into learning through experiential approaches, satirical
+                        reflection, and nature-based discovery.</p>
                     <div class="hero-buttons">
                         <a href="#about" class="btn btn-primary">Learn About My Journey</a>
                         <a href="#contact" class="btn btn-secondary">Let's Connect</a>
                     </div>
                 </div>
-                
+
             </div>
         </section>
 
@@ -920,11 +942,23 @@
             <h2>Who I Am</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Over three decades in classrooms and corridors, I’ve worn many hats—Teacher, Vice Principal, Workshop Leader, and Curriculum Innovator. My journey, rooted in the academic tradition of IIT Roorkee, has grown into a broader vision of education that blends rigor with joy, structure with curiosity, and knowledge with real-life experience.
-</p>
-                    <p>While Physics remains my intellectual home, my passion extends far beyond equations. I see learning as a living process—where a story can teach as much as a formula, a festival can explain as much as a lab experiment, and curiosity is the most powerful tool in any classroom. My work spans traditional teaching, experiential curriculum design, teacher training programs, and educational writing that brings humor, reflection, and critical perspective into how we think about learning.
-</p>
-                    <p>Whether guiding students through the beauty of a rainbow, helping teachers design engaging lessons, or challenging the jargon-filled world of education with satire, my goal remains simple: to make learning authentic, joyful, and deeply human. When I’m not engaged in education, I’m exploring music, humor, and ideas that spark curiosity—reminding me, always, that learning never really ends.</p>
+                    <p>Over three decades in classrooms and corridors, I’ve worn many hats—Teacher, Vice Principal,
+                        Workshop Leader, and Curriculum Innovator. My journey, rooted in the academic tradition of IIT
+                        Roorkee, has grown into a broader vision of education that blends rigor with joy, structure with
+                        curiosity, and knowledge with real-life experience.
+                    </p>
+                    <p>While Physics remains my intellectual home, my passion extends far beyond equations. I see
+                        learning as a living process—where a story can teach as much as a formula, a festival can
+                        explain as much as a lab experiment, and curiosity is the most powerful tool in any classroom.
+                        My work spans traditional teaching, experiential curriculum design, teacher training programs,
+                        and educational writing that brings humor, reflection, and critical perspective into how we
+                        think about learning.
+                    </p>
+                    <p>Whether guiding students through the beauty of a rainbow, helping teachers design engaging
+                        lessons, or challenging the jargon-filled world of education with satire, my goal remains
+                        simple: to make learning authentic, joyful, and deeply human. When I’m not engaged in education,
+                        I’m exploring music, humor, and ideas that spark curiosity—reminding me, always, that learning
+                        never really ends.</p>
                 </div>
                 <div class="highlight-box">
                     <h3>My Impact</h3>
@@ -944,7 +978,10 @@
                     </div>
                 </div>
             </div>
-            <p class="embedded-quote fade-in">"Average students in his class, are as common as unicorns in a physics lab. His students fall into two categories: the above-average, who find the material yawn inducing and the below-average, who look at it like it's written in ancient hieroglyphics. Arjun—err, Mr. Bhardwaj—finds himself shooting arrows into an empty space"</p>
+            <p class="embedded-quote fade-in">"Average students in his class, are as common as unicorns in a physics
+                lab. His students fall into two categories: the above-average, who find the material yawn inducing and
+                the below-average, who look at it like it's written in ancient hieroglyphics. Arjun—err, Mr.
+                Bhardwaj—finds himself shooting arrows into an empty space"</p>
         </section>
 
         <section class="section offerings fade-in" id="offerings">
@@ -955,59 +992,50 @@
                         <div class="gear gear-main"></div>
                         <div class="gear gear-small"></div>
                     </div>
-                    <h3>Experiential Learning Workshops</h3>
-                    <p>Hands-on physics workshops that transform abstract concepts into tangible experiences. I design sessions that connect classroom learning with real-world phenomena, making physics accessible and exciting for learners of all ages.</p>
+                    <h3>Hands-on workshops and nature-inspired modules</h3>
+                    <p>From classroom activities to forest acoustics and monsoon optics, I design learning experiences
+                        that connect knowledge with the real world and spark curiosity.</p>
                 </div>
-                
+
                 <div class="card has-gears">
                     <div class="gear-container">
                         <div class="gear gear-main"></div>
                         <div class="gear gear-small"></div>
                     </div>
-                    <h3>Educator Training & Mentoring</h3>
-                    <p>Comprehensive professional development programs for physics teachers and educators. I share practical strategies, innovative teaching methods, and reflective practices that transform how physics is taught and learned.</p>
+                    <h3>Educator Training & Consulting</h3>
+                    <p>Professional development and strategic support for schools and teachers. I share practical
+                        strategies, innovative pedagogy, and reflective practices that strengthen teaching, curriculum
+                        design, and continuous professional growth for increased learning outcomes.</p>
                 </div>
-                
+
                 <div class="card has-gears">
                     <div class="gear-container">
                         <div class="gear gear-main"></div>
                         <div class="gear gear-small"></div>
                     </div>
-                    <h3>Nature-based Physics Modules</h3>
-                    <p>Unique curriculum modules that explore physics concepts through natural phenomena. From forest acoustics to monsoon optics, these programs foster both scientific understanding and environmental awareness.</p>
+                    <h3>Creative & Interdisciplinary Learning</h3>
+                    <p>Integrating music, humor, and storytelling into education, I help teachers make learning joyful,
+                        memorable, and cross-disciplinary—going beyond formulas to nurture creativity and deeper
+                        understanding.</p>
                 </div>
-                
+
                 <div class="card has-gears">
                     <div class="gear-container">
                         <div class="gear gear-main"></div>
                         <div class="gear gear-small"></div>
                     </div>
-                    <h3>Curriculum & CPD Consulting</h3>
-                    <p>Strategic consulting for educational institutions seeking to modernize their physics curriculum and continuous professional development programs. I help schools create more engaging and effective learning experiences.</p>
-                </div>
-                
-                <div class="card has-gears">
-                    <div class="gear-container">
-                        <div class="gear gear-main"></div>
-                        <div class="gear gear-small"></div>
-                    </div>
-                    <h3>Educational Satire Writing</h3>
-                    <p>Thought-provoking satirical content that challenges conventional educational practices. My writings offer humorous yet insightful perspectives on teaching, learning, and educational bureaucracy.</p>
-                </div>
-                
-                <div class="card has-gears">
-                    <div class="gear-container">
-                        <div class="gear gear-main"></div>
-                        <div class="gear gear-small"></div>
-                    </div>
-                    <h3>Creative Learning Integration</h3>
-                    <p>Innovative approaches that blend music, humor, and creativity with physics education. I help educators incorporate artistic elements to create more memorable and engaging learning experiences.</p>
+                    <h3>Educational Writing & Satire</h3>
+                    <p>Through books, articles, and satirical writing, I offer fresh perspectives on
+                        education—challenging jargon, bureaucracy, and outdated practices with humor and insight.</p>
                 </div>
             </div>
         </section>
 
-        <p class="embedded-quote fade-in">"The report card of students in every “good school” is an indecipherable maze of educational jargon, all under the grand label of “360-degree assessment.” After all, they are the change makers. For Mr. Jha and his generation, who probably come from a traditional one-dimensional era not even 30 degree, this was a leap into the unknown"</p>
-        
+        <p class="embedded-quote fade-in">"The report card of students in every “good school” is an indecipherable maze
+            of educational jargon, all under the grand label of “360-degree assessment.” After all, they are the change
+            makers. For Mr. Jha and his generation, who probably come from a traditional one-dimensional era not even 30
+            degree, this was a leap into the unknown"</p>
+
 
         <section class="section blog fade-in" id="blog">
             <h2>My Writings & Videos</h2>
@@ -1018,28 +1046,37 @@
                         <div class="gear gear-small"></div>
                     </div>
                     <h3 class="blog-title">Graphic Novel - A morning with Newton</h3>
-                    <p class="blog-excerpt">What starts as an exchange about the general tendency of mankind to comfortably stay in their beds turns into a learning moment as the father introduces the concept of inertia to his daughter.</p>
-                    <a href="https://diksha.gov.in/resources/play/collection/do_31322470202954547211313?contentType=TextBook" class="blog-meta">Read more</a>
+                    <p class="blog-excerpt">What starts as an exchange about the general tendency of mankind to
+                        comfortably stay in their beds turns into a learning moment as the father introduces the concept
+                        of inertia to his daughter.</p>
+                    <a href="https://diksha.gov.in/resources/play/collection/do_31322470202954547211313?contentType=TextBook"
+                        class="blog-meta">Read more</a>
                 </div>
-                
+
                 <div class="blog-card has-gears">
                     <div class="gear-container">
                         <div class="gear gear-main"></div>
                         <div class="gear gear-small"></div>
                     </div>
                     <h3 class="blog-title">Impact of Experiential Learning as a Pedagogy on Learning Outcomes</h3>
-                    <p class="blog-excerpt">Based on the theories of Dewey and Kolb, this article reviews how experiential learning impacts academic performance, motivation, and self-efficacy in K-12 students and discusses its future scope.</p>
+                    <p class="blog-excerpt">Based on the theories of Dewey and Kolb, this article reviews how
+                        experiential learning impacts academic performance, motivation, and self-efficacy in K-12
+                        students and discusses its future scope.</p>
                     <a href="https://www.jetir.org/view?paper=JETIR2303080" class="blog-meta">Read more</a>
                 </div>
-                
+
                 <div class="blog-card has-gears">
                     <div class="gear-container">
                         <div class="gear gear-main"></div>
                         <div class="gear gear-small"></div>
                     </div>
-                    <h3 class="blog-title">Efficacy of Multiple Intelligence based Instruction Models for School Teaching</h3>
-                    <p class="blog-excerpt">This examines the empirical evidence for using Multiple Intelligence theory as a basis for teaching models in schools. It questions whether differentiating instruction to align with various intelligences leads to a measurable improvement in academic performance.</p>
-                    <a href="https://shikshapriyadarshini.com/wp-content/uploads/2024/07/19.-ShikshaPriyadarshini_Pre-Pages.pdf" class="blog-meta">Read More</a>
+                    <h3 class="blog-title">Efficacy of Multiple Intelligence based Instruction Models for School
+                        Teaching</h3>
+                    <p class="blog-excerpt">This examines the empirical evidence for using Multiple Intelligence theory
+                        as a basis for teaching models in schools. It questions whether differentiating instruction to
+                        align with various intelligences leads to a measurable improvement in academic performance.</p>
+                    <a href="https://shikshapriyadarshini.com/wp-content/uploads/2024/07/19.-ShikshaPriyadarshini_Pre-Pages.pdf"
+                        class="blog-meta">Read More</a>
                 </div>
                 <div class="blog-card has-gears">
                     <div class="gear-container">
@@ -1047,9 +1084,12 @@
                         <div class="gear gear-small"></div>
                     </div>
                     <h3 class="blog-title">Navigating the New Horizons: Implications of NEP 2020 for Indian
-    School Education</h3>
-                    <p class="blog-excerpt">NEP 2020 revolutionizes Indian school education by shifting from rote learning to a holistic, multidisciplinary approach. It introduces a new curricular structure and prioritizes foundational skills and vocational training from an early age.</p>
-                    <a href="https://shikshapriyadarshini.com/wp-content/uploads/2025/01/20.-ShikshaPriyadarshini_Pre-Pages.pdf" class="blog-meta">Read More</a>
+                        School Education</h3>
+                    <p class="blog-excerpt">NEP 2020 revolutionizes Indian school education by shifting from rote
+                        learning to a holistic, multidisciplinary approach. It introduces a new curricular structure and
+                        prioritizes foundational skills and vocational training from an early age.</p>
+                    <a href="https://shikshapriyadarshini.com/wp-content/uploads/2025/01/20.-ShikshaPriyadarshini_Pre-Pages.pdf"
+                        class="blog-meta">Read More</a>
                 </div>
             </div>
         </section>
@@ -1065,18 +1105,21 @@
                     <div class="media-header"></div>
                     <div class="media-content">
                         <h4>Physics in the Wild: Sound Waves in a Forest</h4>
-                        <p>A captivating exploration of acoustic physics principles demonstrated through natural forest environments, showing how sound behaves in different natural settings.</p>
+                        <p>A captivating exploration of acoustic physics principles demonstrated through natural forest
+                            environments, showing how sound behaves in different natural settings.</p>
                     </div>
                 </div>
-                
+
                 <div class="media-card testimonial">
                     <div class="media-header"></div>
                     <div class="media-content">
-                        <blockquote>"Your session completely transformed how I approach teaching physics. The nature-based methodology has made my students more engaged than ever before. Thank you for opening our eyes to new possibilities in education."</blockquote>
+                        <blockquote>"Your session completely transformed how I approach teaching physics. The
+                            nature-based methodology has made my students more engaged than ever before. Thank you for
+                            opening our eyes to new possibilities in education."</blockquote>
                         <cite>— Teacher, Delhi</cite>
                     </div>
                 </div>
-                
+
                 <div class="media-card has-gears">
                     <div class="gear-container">
                         <div class="gear gear-main"></div>
@@ -1085,20 +1128,24 @@
                     <div class="media-header"></div>
                     <div class="media-content">
                         <h4>Workshop Documentation</h4>
-                        <p>Visual documentation from recent experiential learning workshops, showcasing educators actively discovering physics concepts through collaborative hands-on activities.</p>
+                        <p>Visual documentation from recent experiential learning workshops, showcasing educators
+                            actively discovering physics concepts through collaborative hands-on activities.</p>
                     </div>
                 </div>
-                
+
             </div>
         </section>
 
-        <p class="embedded-quote fade-in">"अब इस उम्र मे अपने आप को दोबारा सिद्ध करने की न तो इच्छा होती है न ही ज़रूरत"</p>
+        <p class="embedded-quote fade-in">"अब इस उम्र मे अपने आप को दोबारा सिद्ध करने की न तो इच्छा होती है न ही ज़रूरत"
+        </p>
 
         <section class="cta fade-in" id="contact">
-            <h3>Ready to Transform Physics Education Together?</h3>
-            <p>Whether you're an educator seeking fresh inspiration, a school leader planning innovation, or a curious learner ready to explore physics in new ways, I'd love to connect and collaborate with you.</p>
+            <h3>Ready to Transform Education Together?</h3>
+            <p>Whether you're an educator seeking fresh inspiration, a school leader planning innovation, or a curious
+                learner ready to explore physics in new ways, I'd love to connect and collaborate with you.</p>
             <div class="hero-buttons">
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=bhardwajgbs@gmail.com" class="btn btn-primary">Start Our Conversation</a>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=bhardwajgbs@gmail.com"
+                    class="btn btn-primary">Start Our Conversation</a>
             </div>
         </section>
     </main>
@@ -1151,7 +1198,7 @@
                 rootMargin: '0px 0px -50px 0px'
             };
 
-            const observer = new IntersectionObserver(function(entries) {
+            const observer = new IntersectionObserver(function (entries) {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
@@ -1166,7 +1213,7 @@
             // Header background on scroll
             const header = document.querySelector('header');
             if (header) {
-                window.addEventListener('scroll', function() {
+                window.addEventListener('scroll', function () {
                     if (window.scrollY > 100) {
                         header.style.background = 'rgba(249, 250, 251, 0.98)';
                         header.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
@@ -1179,4 +1226,5 @@
         });
     </script>
 </body>
+
 </html>
