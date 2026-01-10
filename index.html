@@ -625,10 +625,10 @@
             line-height: 1.6;
             margin-bottom: 1rem;
             font-size: 1rem;
-            white-space: pre-wrap;
-            /* Preserve line breaks */
-            text-align: left;
-            /* Strict left align */
+            white-space: normal;
+            /* Fix alignment by allowing normal wrapping */
+            text-align: left !important;
+            /* Force strict left align */
         }
 
         .blog-meta {
